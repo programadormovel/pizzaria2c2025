@@ -1,11 +1,15 @@
-const Produtos = () => {
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 
-    //Objeto da lista de peças
-    const pizzas = [
-        'Pizza Muçarela',
-        'Pizza calabresa',
-        'Pizza Portuguesa', 'pizza Baiana', 'Pizza Frita'
-    ]
+const Produtos = () => {
+    const [pizzas, setPizzas] = useState([])
+    //Consumir rota com lista de produtos
+    axios.get("http://viacep.com.br/ws/01010000/json")
+    .then(response=>{
+        console.log(response.data)
+    })
+    .catch(error=>{console.log(error)})
+
     //Iteração da lista de pizzas - pizza a pizza (um a um)
     const listaPizzas = pizzas.map(pizza=><li>{pizza}</li>)
    
@@ -14,7 +18,6 @@ const Produtos = () => {
             <h3>Listagem de Produtos</h3>
             <ul>
                 {listaPizzas}
-            
             </ul>
         </div>
     )
