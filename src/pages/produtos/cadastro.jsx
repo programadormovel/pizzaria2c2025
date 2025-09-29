@@ -1,14 +1,18 @@
+// Hooks do react - estado dos dados e renderização
 import { useState, useEffect } from "react";
+// ferramenta de consumos das rotas ou endpoints
 import axios from "axios";
 
 // Formulário simples em JavaScript usando apenas <div>, <input>, useState/useEffect e axios
 const CadastroProduto = () => {
+  // Estado que mantém os dados do produto em memória
   const [form, setForm] = useState({
     nome: "",
     tipo: "",
     precoVenda: "",
     descricao: ""
   });
+  
   const [loading, setLoading] = useState(false);
   const [msg, setMsg] = useState("");
 
