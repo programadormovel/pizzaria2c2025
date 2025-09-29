@@ -21,7 +21,8 @@ const Produtos = () => {
     }, [])
     
     // Iteração da lista de pizzas - pizza a pizza (um a um)
-    const listaPizzas = pizzas.map(pizza=><li>{pizza.nome}</li>)
+    const listaPizzas = pizzas.map(pizza=>
+    <li key={pizza.id}>{pizza.nome}</li>)
 
     return (
         <div>
